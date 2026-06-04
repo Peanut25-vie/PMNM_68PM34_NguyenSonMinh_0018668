@@ -1,10 +1,11 @@
 <?php
 require_once '../app/core/DB.php';
-class sinhvienModel {
+class sinhvienModel
+{
     private $conn;
     public function __construct()
     {
-       $this->conn = connectDB::Connect();
+        $this->conn = connectDB::Connect();
     }
     public function getAllSinhVien()
     {
@@ -12,5 +13,15 @@ class sinhvienModel {
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function create($data)
+    {
+        $query = "INSERT INTO tbl_sinhviens (hoten, gioitinh, mssv) VALUES (:hoten, :gioitinh, :mssv)";
+        $stmt = $this->conn->prepare($query);
+        if ($stmt->execute($data)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
