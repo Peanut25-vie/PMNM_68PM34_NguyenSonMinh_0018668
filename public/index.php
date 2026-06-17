@@ -1,3 +1,12 @@
 <?php
-echo "<h1>Hello từ file index.php trong thư mục public!</h1>";
+// Bắt đầu session ở mức cao nhất
+session_start();
+
+// Nhúng bộ khung lõi
+require_once '../app/core/App.php';
+require_once '../app/core/Controller.php';
+require_once '../app/core/DB.php';
+
+// Khởi chạy Routing
+$app = new App();
 ?>
