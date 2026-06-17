@@ -1,5 +1,12 @@
 Options -Indexes
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Bỏ qua nếu URL trỏ thẳng vào một file hoặc thư mục có thật (như ảnh, css, js)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    
+    # Đẩy tất cả các URL còn lại về index.php kèm tham số 'url'
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
