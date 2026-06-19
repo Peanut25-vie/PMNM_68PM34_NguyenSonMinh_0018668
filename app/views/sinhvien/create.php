@@ -1,30 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm sinh viên</title>
-</head>
-
-<body>
-    <h1>Thêm sinh viên</h1>
-    <form action="/sinhvien/store" method="POST">
-        <label for="hoten">Họ tên:</label>
-        <input type="text" id="hoten" name="hoten" required><br><br>
-
-        <label for="gioitinh">Giới tính:</label>
-        <input type="text" id="gioitinh" name="gioitinh" required><br><br>
-        <!-- <select id="gioitinh" name="gioitinh" required>
-            <option value="Nam">Nam</option>
-            <option value="Nữ">Nữ</option>
-            </select><br><br> -->
-
-        <label for="mssv">MSSV:</label>
-        <input type="text" id="mssv" name="mssv" required><br><br>
-
-        <button type="submit">Thêm sinh viên</button>
-    </form>
-</body>
-
-</html>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white text-center">
+                    <h4 class="mb-0">Thêm sinh viên mới</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/baitap/public/sinhvien/store" method="POST">
+                        <div class="mb-3">
+                            <label for="mssv" class="form-label fw-bold">MSSV:</label>
+                            <input type="text" class="form-control" id="mssv" name="mssv" placeholder="Nhập MSSV..." required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hoten" class="form-label fw-bold">Họ tên:</label>
+                            <input type="text" class="form-control" id="hoten" name="hoten" placeholder="Nhập họ và tên..." required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gioitinh" class="form-label fw-bold">Giới tính:</label>
+                            <select class="form-select" id="gioitinh" name="gioitinh" required>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="lophoc" class="form-label fw-bold">Lớp học (Không bắt buộc):</label>
+                            <input type="text" class="form-control" id="lophoc" name="lophoc" placeholder="Ví dụ: Công nghệ thông tin 001">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Lưu sinh viên</button>
+                            <a href="/baitap/public/sinhvien/index" class="btn btn-secondary">Quay lại danh sách</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
