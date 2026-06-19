@@ -1,18 +1,21 @@
 <?php
-class home
-{
-  public function index()
-  {
-    echo "Đây là trang chủ";
-  }
+require_once __DIR__ . '/../core/Controller.php';
+require_once __DIR__ . '/../views/middleware.php'; 
 
-  public function about()
-  {
-    echo "Đây là trang giới thiệu";
-  }
-  public function login()
-  {
-    require_once '../app/views/home/login.php';
+class home extends Controller {
+    public function index() {
+        
+        header('Location: /baitap/public/sinhvien/index');
+        exit();
+    }
 
-  }
+    public function about() {
+        echo "Đây là trang giới thiệu";
+    }
+
+    public function login() {
+        middleware::checklogout(); 
+        $this->view('home/login');
+    }
 }
+?>
