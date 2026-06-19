@@ -3,7 +3,7 @@
         <h3 class="fw-bold text-secondary m-0">
             Danh sách sinh viên <span class="badge bg-secondary fs-6 rounded-pill"><?= $totalrecords; ?></span>
         </h3>
-        <a href="/baitap/public/sinhvien/create" class="btn btn-success fw-medium">+ Thêm sinh viên</a>
+        <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/create" class="btn btn-success fw-medium">+ Thêm sinh viên</a>
     </div>
 
     <?php
@@ -13,7 +13,7 @@
     <?php endif; ?>
 
     <div class="card p-3 mb-4 bg-white border-0 shadow-sm">
-        <form method="GET" action="/baitap/public/sinhvien/index" class="row g-3 align-items-center">
+        <form method="GET" action="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index" class="row g-3 align-items-center">
             <input type="hidden" name="limit" value="<?= $limit; ?>">
             
             <div class="col-md-4">
@@ -33,15 +33,15 @@
             
             <div class="col-md-3 d-flex gap-2">
                 <button type="submit" class="btn btn-primary px-3">Tìm kiếm</button>
-                <a href="/baitap/public/sinhvien/index" class="btn btn-light border px-3">Đặt lại</a>
+                <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index" class="btn btn-light border px-3">Đặt lại</a>
             </div>
 
             <div class="col-md-2 text-end">
                 <label class="small me-1">Hiển thị:</label>
                 <select class="form-select d-inline-block w-auto form-select-sm" onchange="location = this.value;">
-                    <option value="/baitap/public/sinhvien/index?limit=5&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>" <?= $limit == 5 ? 'selected' : ''; ?>>5/trang</option>
-                    <option value="/baitap/public/sinhvien/index?limit=10&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>" <?= $limit == 10 ? 'selected' : ''; ?>>10/trang</option>
-                    <option value="/baitap/public/sinhvien/index?limit=20&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>" <?= $limit == 20 ? 'selected' : ''; ?>>20/trang</option>
+                    <option value="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index?limit=5&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>" <?= $limit == 5 ? 'selected' : ''; ?>>5/trang</option>
+                    <option value="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index?limit=10&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>" <?= $limit == 10 ? 'selected' : ''; ?>>10/trang</option>
+                    <option value="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index?limit=20&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>" <?= $limit == 20 ? 'selected' : ''; ?>>20/trang</option>
                 </select>
             </div>
         </form>
@@ -73,7 +73,7 @@
                                 <td><?= htmlspecialchars($sv['gioitinh']); ?></td>
                                 <td>
                                     <?php if (!empty($sv['lophoc'])): ?>
-                                        <a href="/baitap/public/sinhvien/index?lophoc=<?= urlencode($sv['lophoc']); ?>" class="badge bg-info text-decoration-none text-dark px-3 py-2 rounded-1">
+                                        <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index?lophoc=<?= urlencode($sv['lophoc']); ?>" class="badge bg-info text-decoration-none text-dark px-3 py-2 rounded-1">
                                             <?= htmlspecialchars($sv['lophoc']); ?>
                                         </a>
                                     <?php else: ?>
@@ -81,8 +81,8 @@
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="/baitap/public/sinhvien/edit/<?= $sv['id']; ?>" class="btn btn-warning btn-sm fw-medium text-dark px-2 py-1">Sửa</a>
-                                    <a href="/baitap/public/sinhvien/delete/<?= $sv['id']; ?>" class="btn btn-danger btn-sm fw-medium px-2 py-1" onclick="return confirm('Bạn có chắc muốn xóa sinh viên này?')">Xóa</a>
+                                    <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/edit/<?= $sv['id']; ?>" class="btn btn-warning btn-sm fw-medium text-dark px-2 py-1">Sửa</a>
+                                    <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/delete/<?= $sv['id']; ?>" class="btn btn-danger btn-sm fw-medium px-2 py-1" onclick="return confirm('Bạn có chắc muốn xóa sinh viên này?')">Xóa</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -109,20 +109,20 @@
             <nav>
                 <ul class="pagination pagination-sm m-0">
                     <li class="page-item <?= $page <= 1 ? 'disabled' : ''; ?>">
-                        <a class="page-link text-dark" href="/baitap/public/sinhvien/index?page=<?= $page - 1; ?>&limit=<?= $limit; ?>&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>">&lt;</a>
+                        <a class="page-link text-dark" href="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index?page=<?= $page - 1; ?>&limit=<?= $limit; ?>&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>">&lt;</a>
                     </li>
 
                     <?php for ($i = 1; $i <= $totalpage; $i++): ?>
                         <li class="page-item <?= $page == $i ? 'active' : ''; ?>">
                             <a class="page-link <?= $page == $i ? 'bg-primary text-white border-primary' : 'text-dark'; ?>" 
-                               href="/baitap/public/sinhvien/index?page=<?= $i; ?>&limit=<?= $limit; ?>&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>">
+                               href="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index?page=<?= $i; ?>&limit=<?= $limit; ?>&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>">
                                 <?= $i; ?>
                             </a>
                         </li>
                     <?php endfor; ?>
 
                     <li class="page-item <?= $page >= $totalpage ? 'disabled' : ''; ?>">
-                        <a class="page-link text-dark" href="/baitap/public/sinhvien/index?page=<?= $page + 1; ?>&limit=<?= $limit; ?>&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>">&gt;</a>
+                        <a class="page-link text-dark" href="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index?page=<?= $page + 1; ?>&limit=<?= $limit; ?>&search=<?= urlencode($search); ?>&lophoc=<?= urlencode($lophoc); ?>">&gt;</a>
                     </li>
                 </ul>
             </nav>
