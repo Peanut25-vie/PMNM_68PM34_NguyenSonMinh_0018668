@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
-       
+        /* CSS giúp cố định Footer ở đáy màn hình kể cả khi trang ít dữ liệu */
         body {
             display: flex;
             flex-direction: column;
@@ -33,7 +33,7 @@
     <main class="py-4">
         <?php 
         if (isset($viewname) && file_exists('../app/views/' . $viewname . '.php')) {
-           
+            // Biến $sinhviens, $totalpage,... đã được giải nén tự động nhờ hàm extract($data) ở Controller
             require_once '../app/views/' . $viewname . '.php';
         } else {
             echo '<div class="container"><div class="alert alert-danger text-center">Giao diện con (View) không tồn tại hoặc chưa được thiết lập chính xác!</div></div>';
