@@ -1,37 +1,26 @@
 <?php
-
 class ConnectDB {
     private static $host = 'localhost';
     private static $db_name = '68PM34';
     private static $username = 'root';
-    private static $password = '5555';
-    public static $conn;
+    private static $password = ''; 
+    public static $conn = null;
 
     public static function connect() {
-
-        $conn = null;
-
-        try {
-
-            $conn = new PDO(
-                'mysql:host=' . self::$host . ';dbname=' . self::$db_name,
-                self::$username,
-                self::$password
-            );
-
-            $conn->setAttribute(
-                PDO::ATTR_ERRMODE,
-                PDO::ERRMODE_EXCEPTION
-            );
-
-        } catch(PDOException $e) {
-
-            echo 'Lỗi kết nối: ' . $e->getMessage();
-
+        if (self::$conn === null) {
+            try {
+               
+                self::$conn = new PDO(
+                    'mysql:host=' . self::$host . ';port=3308;dbname=' . self::$db_name . ';charset=utf8',
+                    self::$username,
+                    self::$password
+                );
+                self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch(PDOException $e) {
+                die('Lỗi kết nối CSDL: ' . $e->getMessage());
+            }
         }
-
-        return $conn;
+        return self::$conn;
     }
 }
-
 ?>
