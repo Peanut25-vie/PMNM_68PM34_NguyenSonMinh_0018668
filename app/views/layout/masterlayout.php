@@ -1,60 +1,54 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <title><?= isset($title) ? $title : 'Hệ thống Quản lý'; ?></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            height: 100%;
-        }
-
+       
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background-color: #f8f9fa;
         }
-
-        .content {
-            flex: 1 0 auto;
-           
-            width: 80%;
-           
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-
-       
-        footer {
-            flex-shrink: 0;
+        main {
+            flex: 1;
         }
     </style>
 </head>
-
 <body>
-    <?php require_once '../app/views/layout/partial/header.php'; ?>
 
-    <div class="content">
-        <?php
-        require_once '../app/views/' . $viewname . '.php';
+    <?php 
+    if (file_exists('../app/views/layout/partial/header.php')) {
+        require_once '../app/views/layout/partial/header.php'; 
+    } else {
+        echo "<div class='alert alert-warning m-0 rounded-0'>Thiếu file header.php</div>";
+    }
+    ?>
+
+    <main class="py-4">
+        <?php 
+        if (isset($viewname) && file_exists('../app/views/' . $viewname . '.php')) {
+           
+            require_once '../app/views/' . $viewname . '.php';
+        } else {
+            echo '<div class="container"><div class="alert alert-danger text-center">Giao diện con (View) không tồn tại hoặc chưa được thiết lập chính xác!</div></div>';
+        }
         ?>
-    </div>
+    </main>
 
-    <?php require_once '../app/views/layout/partial/footer.php'; ?>
+    <?php 
+    if (file_exists('../app/views/layout/partial/footer.php')) {
+        require_once '../app/views/layout/partial/footer.php'; 
+    } else {
+        echo "<div class='alert alert-warning m-0 rounded-0'>Thiếu file footer.php</div>";
+    }
+    ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
