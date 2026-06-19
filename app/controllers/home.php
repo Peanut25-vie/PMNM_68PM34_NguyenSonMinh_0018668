@@ -5,7 +5,7 @@ require_once __DIR__ . '/../views/middleware.php';
 class home extends Controller {
     public function index() {
         
-        header('Location: /baitap/public/sinhvien/index');
+        header('Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index');
         exit();
     }
 
