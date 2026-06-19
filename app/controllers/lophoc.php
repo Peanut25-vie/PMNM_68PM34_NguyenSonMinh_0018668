@@ -53,10 +53,10 @@ class lophoc extends Controller
             $lophocModel = $this->model('lophocModel');
             if ($lophocModel->create($data)) {
                 $_SESSION['success'] = "Thêm lớp học thành công!";
-                header("Location: /baitap/public/lophoc/index");
+                header("Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/lophoc/index");
             } else {
                 $_SESSION['error'] = "Thêm lớp học thất bại!";
-                header("Location: /baitap/public/lophoc/create");
+                header("Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/lophoc/create");
             }
             exit();
         }
@@ -90,7 +90,7 @@ class lophoc extends Controller
             $lophocModel->update($data);
             
             $_SESSION['success'] = "Cập nhật lớp học thành công!";
-            header("Location: /baitap/public/lophoc/index");
+            header("Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/lophoc/index");
             exit();
         }
     }
@@ -101,7 +101,7 @@ class lophoc extends Controller
         $lophocModel->delete($id);
         
         $_SESSION['success'] = "Đã xóa lớp học thành công!";
-        header("Location: /baitap/public/lophoc/index");
+        header("Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/lophoc/index");
         exit();
     }
 }
