@@ -6,7 +6,7 @@
                     <h4 class="mb-0">Thêm sinh viên mới</h4>
                 </div>
                 <div class="card-body">
-                    <form action="/baitap/public/sinhvien/store" method="POST">
+                    <form action="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/store" method="POST">
                         <div class="mb-3">
                             <label for="mssv" class="form-label fw-bold">MSSV:</label>
                             <input type="text" class="form-control" id="mssv" name="mssv" placeholder="Nhập MSSV..." required>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary">Lưu sinh viên</button>
-                            <a href="/baitap/public/sinhvien/index" class="btn btn-secondary">Quay lại danh sách</a>
+                            <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index" class="btn btn-secondary">Quay lại danh sách</a>
                         </div>
                     </form>
                 </div>
