@@ -25,7 +25,7 @@
             <div class="error"><?= $_SESSION['error']; unset($_SESSION['error']); ?></div>
         <?php endif; ?>
         
-        <form action="/baitap/public/auth/login" method="post">
+        <form action="/PMNM_68PM34_NguyenSonMinh_0018668/public/auth/login" method="post">
             <div class="form-group">
                 <label for="username">Tên đăng nhập:</label>
                 <input type="text" id="username" name="username" required>
