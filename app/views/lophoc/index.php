@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3 class="fw-bold text-secondary m-0">Danh sách lớp học</h3>
-        <a href="/baitap/public/lophoc/create" class="btn btn-success fw-medium">+ Thêm lớp học</a>
+        <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/lophoc/create" class="btn btn-success fw-medium">+ Thêm lớp học</a>
     </div>
 
     <?php
@@ -11,14 +11,14 @@
     <?php endif; ?>
 
     <div class="card p-3 mb-4 bg-white border-0 shadow-sm">
-        <form method="GET" action="/baitap/public/lophoc/index" class="row g-3 align-items-center">
+        <form method="GET" action="/PMNM_68PM34_NguyenSonMinh_0018668/public/lophoc/index" class="row g-3 align-items-center">
             <div class="col-md-5">
                 <input type="text" name="search" class="form-control" placeholder="Tìm theo mã lớp hoặc tên lớp..." value="<?= htmlspecialchars($search); ?>">
             </div>
             
             <div class="col-md-4 d-flex gap-2">
                 <button type="submit" class="btn btn-primary px-3">Tìm kiếm</button>
-                <a href="/baitap/public/lophoc/index" class="btn btn-light border px-3">Đặt lại</a>
+                <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/lophoc/index" class="btn btn-light border px-3">Đặt lại</a>
             </div>
         </form>
     </div>
@@ -51,8 +51,8 @@
                                 <td class="text-start ps-4 text-success fw-medium"><?= htmlspecialchars($lh['tenlop']); ?></td>
                                 <td class="text-start text-muted"><?= htmlspecialchars($lh['ghichu']); ?></td>
                                 <td>
-                                    <a href="/baitap/public/lophoc/edit/<?= $lh['id']; ?>" class="btn btn-warning btn-sm fw-medium text-dark px-2 py-1">Sửa</a>
-                                    <a href="/baitap/public/lophoc/delete/<?= $lh['id']; ?>" class="btn btn-danger btn-sm fw-medium px-2 py-1" onclick="return confirm('Bạn có chắc muốn xóa lớp học này?')">Xóa</a>
+                                    <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/lophoc/edit/<?= $lh['id']; ?>" class="btn btn-warning btn-sm fw-medium text-dark px-2 py-1">Sửa</a>
+                                    <a href="/PMNM_68PM34_NguyenSonMinh_0018668/public/lophoc/delete/<?= $lh['id']; ?>" class="btn btn-danger btn-sm fw-medium px-2 py-1" onclick="return confirm('Bạn có chắc muốn xóa lớp học này?')">Xóa</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
