@@ -25,11 +25,11 @@ class auth extends Controller
                 $_SESSION['username'] = $username;
                 
                 
-                header('Location: /baitap/public/sinhvien/index');
+                header('Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index');
                 exit();
             } else {
                 $_SESSION['error'] = "Tên đăng nhập hoặc mật khẩu không đúng";
-                header('Location: /baitap/public/home/login');
+                header('Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/home/login');
                 exit();
             }
         } else {
@@ -43,7 +43,7 @@ class auth extends Controller
             session_start();
         }
         session_destroy();
-        header('Location: /baitap/public/home/login');
+        header('Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/home/login');
         exit();
     }
 }
