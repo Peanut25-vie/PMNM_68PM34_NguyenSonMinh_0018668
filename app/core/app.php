@@ -7,6 +7,7 @@ class App {
     public function __construct() {
         $urlArr = $this->UrlProcess();
 
+        // Xử lý Controller
         if (isset($urlArr[0]) && file_exists('../app/controllers/' . strtolower($urlArr[0]) . '.php')) {
             $this->controller = strtolower($urlArr[0]);
             unset($urlArr[0]);
@@ -14,7 +15,7 @@ class App {
         require_once '../app/controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller();
 
-        
+        // Xử lý Action
         if (isset($urlArr[1])) {
             if (method_exists($this->controller, $urlArr[1])) {
                 $this->action = $urlArr[1];
@@ -22,7 +23,7 @@ class App {
             }
         }
 
-        
+        // Xử lý Params
         $this->params = $urlArr ? array_values($urlArr) : [];
         call_user_func_array([$this->controller, $this->action], $this->params);
     }
