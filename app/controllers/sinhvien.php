@@ -58,10 +58,10 @@ class sinhvien extends Controller
             $sinhvienModel = $this->model('sinhvienModel');
             if ($sinhvienModel->create($data)) {
                 $_SESSION['success'] = "Thêm sinh viên thành công!";
-                header("Location: /baitap/public/sinhvien/index");
+                header("Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index");
             } else {
                 $_SESSION['error'] = "Thêm sinh viên thất bại!";
-                header("Location: /baitap/public/sinhvien/create");
+                header("Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/create");
             }
             exit();
         }
@@ -96,7 +96,7 @@ class sinhvien extends Controller
             $sinhvienModel->update($data);
             
             $_SESSION['success'] = "Cập nhật sinh viên thành công!";
-            header("Location: /baitap/public/sinhvien/index");
+            header("Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index");
             exit();
         }
     }
@@ -107,7 +107,7 @@ class sinhvien extends Controller
         $sinhvienModel->delete($id);
         
         $_SESSION['success'] = "Đã xóa sinh viên thành công!";
-        header("Location: /baitap/public/sinhvien/index");
+        header("Location: /PMNM_68PM34_NguyenSonMinh_0018668/public/sinhvien/index");
         exit();
     }
 }
